@@ -5,12 +5,10 @@ import {Modal} from "./Modal";
 
 const useStyles = makeStyles((theme) => ({
     demoContainer: {
-        maxWidth: "100%",
-
+        minWidth:300,
         background: "rgba(184,184,184,0.2)",
         border: "1px solid rgba(184,184,184,0.5)",
         borderRadius: "10px",
-        margin: '2rem 3rem'
     },
     demoHeader: {
         display: "flex",

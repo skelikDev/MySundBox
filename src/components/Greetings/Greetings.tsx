@@ -10,6 +10,7 @@ import {
     Link
 } from "react-router-dom";
 import {Appbar} from "../NavComp/Appbar";
+import {FORSTUDY} from "../Pages/FORSTUDY";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,6 +39,7 @@ export const Greetings = () => {
 			 <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}/>
 			 <Switch>
 				<Route exact path={'/animation'} component={ANIMATION}/>
+				<Route exact path={'/forStudy'} component={FORSTUDY}/>
 			 </Switch>
 		  </div>
 	   </div>

@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
     demoGridContainer: {
 	   display: "grid",
+		gridGap: '40px',
 	   gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
     },
 
@@ -25,7 +26,7 @@ export const ANIMATION = () => {
 	let cards= cardsArray.map(el=> <Card description={el.des} key={el.title} gitLink={el.componentName} title={el.title}>{<el.component/>}</Card>)
     return (
 	   <div className={classes.pageContent}>
-		  <Container className={classes.demoGridContainer}>
+		  <Container  className={classes.demoGridContainer}>
 			  {cards}
 		  </Container>
 	   </div>

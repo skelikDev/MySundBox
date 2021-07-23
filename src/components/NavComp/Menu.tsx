@@ -15,7 +15,7 @@ import styled from "styled-components";
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import {useSpring, a, config} from 'react-spring';
 import CloseIcon from '@material-ui/icons/Close';
-
+import CastForEducationIcon from '@material-ui/icons/CastForEducation';
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
@@ -47,7 +47,7 @@ interface IMenu {
 
 export const Menu = ({isMenuOpen, setMenuOpen}: IMenu) => {
     const classes = useStyles()
-    const animatedIcon = useSpring({
+    const animatedANIMATION = useSpring({
         loop: true,
         config: {duration: 1000},
         from: {
@@ -59,11 +59,24 @@ export const Menu = ({isMenuOpen, setMenuOpen}: IMenu) => {
             fontSize: "2.5rem",
             scale: "1.3",
             rotate: 360
-
         },
-
+    })
+    const animatedStudy = useSpring({
+        loop: {reverse:true},
+        config: {duration: 500},
+        from: {
+            fontSize: "2.5rem",
+            scale: 1,
+            rotate: -5,
+        },
+        to: {
+            fontSize: "2.5rem",
+            scale: 1.1,
+            rotate: 5
+        },
     })
     const AnimatedBrightness6Icon = a(Brightness6Icon)
+    const AnimatedCastForEducationIcon = a(CastForEducationIcon)
     const linkClose = () => {
         setMenuOpen(false)
     }
@@ -87,9 +100,17 @@ export const Menu = ({isMenuOpen, setMenuOpen}: IMenu) => {
                     <Button component={NavLink} to="/animation" onClick={() => {
                         setTimeout(linkClose, 500)
                     }}
-                            startIcon={<AnimatedBrightness6Icon style={animatedIcon}/>}>
+                            startIcon={<AnimatedBrightness6Icon style={animatedANIMATION}/>}>
                         <Typography variant="h3" component="h3">
                             Animation
+                        </Typography>
+                    </Button>
+                    <Button component={NavLink} to="/forStudy" onClick={() => {
+                        setTimeout(linkClose, 500)
+                    }}
+                            startIcon={<AnimatedCastForEducationIcon style={animatedStudy}/>}>
+                        <Typography variant="h3" component="h3">
+                            For Study
                         </Typography>
                     </Button>
                 </div>
