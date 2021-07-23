@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Divider, IconButton, makeStyles, Typography} from "@material-ui/core";
+import {Button, colors, Divider, IconButton, makeStyles, Typography} from "@material-ui/core";
 import DescriptionIcon from '@material-ui/icons/Description';
 import {Modal} from "./Modal";
 
@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
         background: "rgba(184,184,184,0.2)",
         border: "1px solid rgba(184,184,184,0.5)",
         borderRadius: "10px",
+        margin: '2rem 3rem'
     },
     demoHeader: {
         display: "flex",
@@ -21,11 +22,16 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        fontWeight:600,
+        color:colors.blueGrey.A700
     },
     line: {
         margin: "0 10%",
     },
     button: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         width: '100%',
         border: 'none',
     },
@@ -36,8 +42,14 @@ const useStyles = makeStyles((theme) => ({
         background: "rgba(184,184,184,0.2)",
         height: "400px",
         borderRadius: "5px",
-
     },
+    icon: {
+        position:"relative",
+        fontSize: '1.4rem',
+        top: ".1rem",
+        marginRight: "0.5rem",
+        color: colors.blueGrey.A700
+    }
 }))
 
 interface ICard {
@@ -59,9 +71,8 @@ export const Card = ({title, children, description, gitLink}: ICard) => {
                         setModalOpen(true)
                     }}
                     className={classes.button}
-                    endIcon={<DescriptionIcon style={{fontSize: '2rem'}}/>}
-                ><Typography variant={"h3"} className={classes.title} noWrap
-                             component={"h3"}>{title}</Typography></Button>
+                ><Typography variant={"h5"} className={classes.title} noWrap
+                             component={"h5"}><DescriptionIcon className={classes.icon}/>{title}</Typography></Button>
                 {/*<IconButton  aria-label="modalOpen" onClick={() => {*/}
                 {/*    setModalOpen(true)*/}
                 {/*}}>*/}

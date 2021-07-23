@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Divider, IconButton, makeStyles, Toolbar} from "@material-ui/core";
-import {Page} from "../Page/Page";
+import {ANIMATION} from "../Pages/ANIMATION";
 import {SwipeableDrawer} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Menu} from "../NavComp/Menu";
@@ -37,7 +37,7 @@ export const Greetings = () => {
 		  <div className={classes.flexWrapper}>
 			 <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen}/>
 			 <Switch>
-				<Route exact path={'/animation'} component={Page}/>
+				<Route exact path={'/animation'} component={ANIMATION}/>
 			 </Switch>
 		  </div>
 	   </div>
