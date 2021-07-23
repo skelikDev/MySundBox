@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 export const Page = () => {
 
     const classes = useStyles()
-	let cards= cardsArray.map(el=> <Card key={el.title} title={el.title}>{<el.component/>}</Card>)
+	let cards= cardsArray.map(el=> <Card description={el.des} key={el.title} gitLink={el.componentName} title={el.title}>{<el.component/>}</Card>)
     return (
 	   <div className={classes.pageContent}>
 		  <div className={classes.demoGridContainer}>

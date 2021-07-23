@@ -1,6 +1,7 @@
-import React from 'react';
-import {Divider, makeStyles, Typography} from "@material-ui/core";
-
+import React, {useState} from 'react';
+import {Button, Divider, IconButton, makeStyles, Typography} from "@material-ui/core";
+import DescriptionIcon from '@material-ui/icons/Description';
+import {Modal} from "./Modal";
 
 const useStyles = makeStyles((theme) => ({
     demoContainer: {
@@ -11,33 +12,67 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "10px",
     },
     demoHeader: {
-        minHeight:"50px",
-        padding: '5px 0'
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "50px",
+        padding: '5px 2rem',
     },
-    line:{
+    title: {
+        flexGrow: 1,
+    },
+    line: {
         margin: "0 10%",
     },
+    button: {
+        width: '100%'
+    },
     demoContent: {
-        display:"flex",
-        justifyContent:"center",
+        display: "flex",
+        justifyContent: "center",
         alignItems: "center",
         background: "rgba(184,184,184,0.2)",
         height: "400px",
         borderRadius: "5px",
+
     },
 }))
 
 interface ICard {
     title: string,
-    children: any
+    children: any,
+    description: string,
+    gitLink: string,
 }
-export const Card =({title, children}:ICard) => {
+
+export const Card = ({title, children, description, gitLink}: ICard) => {
+    const [modalOpen, setModalOpen] = useState(false);
     const classes = useStyles()
     return (
         <div className={classes.demoContainer}>
-            <div className={classes.demoHeader}> <Typography variant={"h2"} noWrap component={"h2"} >{title}</Typography></div>
+            <div className={classes.demoHeader}>
+                <Button
+                    variant="outlined"
+                    onClick={() => {
+                        setModalOpen(true)
+                    }}
+                    className={classes.button}
+                    endIcon={<DescriptionIcon style={{fontSize: '2rem'}}/>}
+                ><Typography variant={"h3"} className={classes.title} noWrap
+                             component={"h3"}>{title}</Typography></Button>
+                {/*<IconButton  aria-label="modalOpen" onClick={() => {*/}
+                {/*    setModalOpen(true)*/}
+                {/*}}>*/}
+                {/*    <DescriptionIcon style={{fontSize: '2rem'}}/>*/}
+                {/*</IconButton>*/}
+                {/*<Typography variant={"h3"} className={classes.title}  noWrap component={"h3"}>{title}</Typography>*/}
+            </div>
             <Divider className={classes.line}/>
             <div className={classes.demoContent}>{children}</div>
+            <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} gitLink={gitLink} title={title}>
+                {description}
+            </Modal>
         </div>
     );
 };
