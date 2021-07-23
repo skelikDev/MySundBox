@@ -8,17 +8,18 @@ import {
     Typography,
     Button,
     Divider,
-    colors
+    colors, IconButton
 } from "@material-ui/core";
 import {NavLink} from "react-router-dom";
 import styled from "styled-components";
 import Brightness6Icon from '@material-ui/icons/Brightness6';
 import {useSpring, a, config} from 'react-spring';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
-        width: "20vw",
+        position: "relative",
         height: "100%",
         backgroundColor: "rgba(255,235,240, 0.8)",
         // backgroundColor: "rgba(200,255,252)",
@@ -31,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+    },
+    button: {
+        position: "absolute",
+        right: "10px",
+        top: "10px",
     }
 }))
 
@@ -58,8 +64,8 @@ export const Menu = ({isMenuOpen, setMenuOpen}: IMenu) => {
 
     })
     const AnimatedBrightness6Icon = a(Brightness6Icon)
-    const  linkClose =()=>{
-    setMenuOpen(false)
+    const linkClose = () => {
+        setMenuOpen(false)
     }
     return (
         <SwipeableDrawer
@@ -71,10 +77,15 @@ export const Menu = ({isMenuOpen, setMenuOpen}: IMenu) => {
             }}
             open={isMenuOpen}>
             <Container fixed maxWidth={"lg"} className={classes.wrapper}>
+                <IconButton className={classes.button} onClick={() => {
+                    setMenuOpen(false)
+                }}>
+                    <CloseIcon/>
+                </IconButton>
                 <div className={classes.menuContent}>
 
                     <Button component={NavLink} to="/animation" onClick={() => {
-                       setTimeout(linkClose,500)
+                        setTimeout(linkClose, 500)
                     }}
                             startIcon={<AnimatedBrightness6Icon style={animatedIcon}/>}>
                         <Typography variant="h3" component="h3">

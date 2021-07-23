@@ -1,7 +1,7 @@
 import {LoadingDemos} from "./LoadingDemos";
 import {FlippingCard} from "./FlippingCard";
 import {DragWithoutSpringDemos} from "./DragWithoutSpringDemos";
-import {DragWithSpringDemos} from "./DragWithReactSpring";
+import {DragWithSpringDemos} from "./DragWithReactSpringDemos";
 
 
 interface ICard {

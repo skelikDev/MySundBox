@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         minHeight: "50px",
-        padding: '5px 2rem',
+        padding: '5px 0',
     },
     title: {
         flexGrow: 1,
@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
         margin: "0 10%",
     },
     button: {
-        width: '100%'
+        width: '100%',
+        border: 'none',
     },
     demoContent: {
         display: "flex",

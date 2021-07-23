@@ -7,6 +7,7 @@ import useMeasure from "react-use-measure";
 const useStyles = makeStyles((theme) => ({
     wrapper: {
  	   backgroundImage: "linear-gradient(45deg, rgba(255,162,227,0.77) 0%, rgba(166,193,238,0.5) 100%)",
+		backdropFilter: "blur(10px)"
     },
 }))
 interface IAppbar {
