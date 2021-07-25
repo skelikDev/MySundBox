@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {colors, makeStyles} from "@material-ui/core";
 import {useDrag, useScroll} from "react-use-gesture";
 import {useSpring} from "@react-spring/web";
@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
         border: `1px solid ${colors.pink.A700}`,
         borderRadius: 10,
        cursor: "pointer",
+        touchAction:"none",
     }
 }))
 
