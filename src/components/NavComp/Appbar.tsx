@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Box, colors, Divider, IconButton, makeStyles, Toolbar} from "@material-ui/core";
+import {AppBar, Box, colors, Container, Divider, IconButton, makeStyles, Toolbar} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import useMeasure from "react-use-measure";
 
@@ -18,15 +18,17 @@ export const Appbar = ({setMenuOpen}:IAppbar) => {
     const classes = useStyles()
     return (
 		  <AppBar ref={ref} position='absolute' className={classes.wrapper} color={'transparent'} elevation={0}>
-			 <Toolbar>
-				<IconButton onClick={() => {
-				    setMenuOpen(true)
-				}}>
-				    <MenuIcon/>
-				</IconButton>
+			<Container>
+				<Toolbar>
+					<IconButton onClick={() => {
+						setMenuOpen(true)
+					}}>
+						<MenuIcon/>
+					</IconButton>
 
-				<h1>SundBox</h1>
-			 </Toolbar>
+					<h1>SundBox</h1>
+				</Toolbar>
+			</Container>
 
 			 <Divider/>
 		  </AppBar>

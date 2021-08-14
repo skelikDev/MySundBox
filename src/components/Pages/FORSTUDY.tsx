@@ -22,15 +22,8 @@ import {listForStudy} from "./listForStudy";
 
 const useStyles = makeStyles((theme) => ({
     root: {},
-    pageContent: {
-        width: '100vw',
-        padding: "100px 0",
-        overflow: "scroll",
-        overflowX: "hidden",
-    },
-    collapseItem: {
-        marginLeft: "2rem"
-    }
+
+
 }))
 const categories = [
     "good",
@@ -50,8 +43,8 @@ export const FORSTUDY = () => {
     const classes = useStyles()
 
     return (
-        <div className={classes.pageContent}>
-            {categories.map(el=> <Button>{el}</Button>)}
-        </div>
+        <>
+            {categories.map(el => <Button>{el}</Button>)}
+        </>
     );
 };

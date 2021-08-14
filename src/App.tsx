@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import {useSpring, animated} from 'react-spring'
 import {Greetings} from "./components/Greetings/Greetings";
-import {createTheme, CssBaseline} from "@material-ui/core";
+import {Container, createTheme, CssBaseline} from "@material-ui/core";
 import {
     BrowserRouter as Router
 } from "react-router-dom";
@@ -28,6 +28,7 @@ function App() {
             <div className="App">
 
                 <Greetings/>
+
             </div>
 
 
