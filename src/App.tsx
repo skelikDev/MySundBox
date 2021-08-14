@@ -5,7 +5,7 @@ import {useSpring, animated} from 'react-spring'
 import {Greetings} from "./components/Greetings/Greetings";
 import {Container, createTheme, CssBaseline} from "@material-ui/core";
 import {
-    BrowserRouter as Router
+   HashRouter as Router
 } from "react-router-dom";
 import * as PropTypes from "prop-types";
 
