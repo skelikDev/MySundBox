@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+    Button,
     Collapse,
     Container,
     List,
@@ -17,6 +18,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../redux/store";
 import {isOpenAction} from "../ForStudy/forStudySlicer";
 import AddIcon from '@material-ui/icons/Add';
+import {listForStudy} from "./listForStudy";
 
 const useStyles = makeStyles((theme) => ({
     root: {},
@@ -30,94 +32,26 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "2rem"
     }
 }))
-
+const categories = [
+    "good",
+    "super",
+    "eng",
+    "funStuff",
+    "podCast",
+    "getStarted",
+    "jsBasic",
+    "jsPractice",
+    "patterns",
+    "node",
+    "gitHub",
+    "reactHooks",
+]
 export const FORSTUDY = () => {
     const classes = useStyles()
-    const listForStudy = useSelector((state: RootState) => state.forStudy.categories)
-    const listChannels = useSelector((state: RootState) => state.forStudy.channels)
-    const dispatch = useDispatch()
-    let channelsList = listChannels.map(el => {
-            let collapseList = el.array.map((col, index) => {
-                return (
-                    <Collapse className={classes.collapseItem} key={`${el.category}${index}`}   in={el.isOpen} timeout="auto" unmountOnExit>
-                        <List   component="a" href={col}  target='_blank' disablePadding>
-                            <ListItem   button>
-                                <ListItemIcon>
-                                    <SubscriptionsIcon/>
-                                </ListItemIcon>
-                                <ListItemText   primary={col}/>
-                            </ListItem>
-                        </List>
-                    </Collapse>
-                )
-            })
-            return <React.Fragment key={el.category}>
-                <ListItem  button onClick={() => {
-                    dispatch(isOpenAction(el.category))
-                }}>
-                    <ListItemIcon  >
-                        <AddIcon key={`${el.category}IconIcon`}/>
-                    </ListItemIcon>
-                    <ListItemText  primary={el.category}/>
-                </ListItem>
-                {collapseList}
-            </React.Fragment>
-        }
-    )
-    let categoryList = listForStudy.map(el => {
-            let collapseList = el.array.map((col, index) => {
-                return (
-                    <Collapse className={classes.collapseItem} key={`${el.category}${index}`}   in={el.isOpen} timeout="auto" unmountOnExit>
-                        <List   component="a" href={col}  target='_blank' disablePadding>
-                            <ListItem   button>
-                                <ListItemIcon>
-                                    <SubscriptionsIcon/>
-                                </ListItemIcon>
-                                <ListItemText   primary={col}/>
-                            </ListItem>
-                        </List>
-                    </Collapse>
-                )
-            })
-            return <React.Fragment key={el.category}>
-                <ListItem  button onClick={() => {
-                    dispatch(isOpenAction(el.category))
-                }}>
-                    <ListItemIcon  >
-                        <AddIcon key={`${el.category}IconIcon`}/>
-                    </ListItemIcon>
-                    <ListItemText  primary={el.category}/>
-                </ListItem>
-                {collapseList}
-            </React.Fragment>
-        }
-    )
+
     return (
-       <div className={classes.pageContent}>
-           <List
-               component="nav"
-               aria-labelledby="Category"
-               subheader={
-                   <ListSubheader component="div" id="nested-list-subheader">
-                       Каналы
-                   </ListSubheader>
-               }
-               className={classes.root}
-           >
-               {channelsList}
-           </List>
-           <List
-               component="nav"
-               aria-labelledby="Category"
-               subheader={
-                   <ListSubheader component="div" id="nested-list-subheader">
-                       Плейлесты и каналы по категориям
-                   </ListSubheader>
-               }
-               className={classes.root}
-           >
-               {categoryList}
-           </List>
-       </div>
+        <div className={classes.pageContent}>
+            {categories.map(el=> <Button>{el}</Button>)}
+        </div>
     );
 };

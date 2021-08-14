@@ -11,7 +11,10 @@ export interface  IChannels {
     array: string[],
     isOpen: boolean
 }
-const initialState: {channels: IChannels[], categories: ICategories[]} = { channels: channels, categories: listForStudy}
+const initialState: {
+    channels: IChannels[],
+    categories: ICategories[]
+} = { channels: channels, categories: listForStudy}
 
 
 export const forStudySlice = createSlice({
