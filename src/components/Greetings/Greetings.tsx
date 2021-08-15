@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Container, Divider, IconButton, makeStyles, Toolbar} from "@material-ui/core";
-import {ANIMATION} from "../Pages/ANIMATION";
+import {ANIMATION} from "../Pages/Animation/ANIMATION";
 import {SwipeableDrawer} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Menu} from "../NavComp/Menu";
@@ -10,7 +10,7 @@ import {
     Link
 } from "react-router-dom";
 import {Appbar} from "../NavComp/Appbar";
-import {FORSTUDY} from "../Pages/FORSTUDY";
+import {FORSTUDY} from "../Pages/ForStudy/FORSTUDY";
 
 const useStyles = makeStyles((theme) => ({
     root: {

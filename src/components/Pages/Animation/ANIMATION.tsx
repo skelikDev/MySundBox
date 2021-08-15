@@ -1,9 +1,9 @@
 import React from 'react';
 import {Box, colors, Container, makeStyles} from "@material-ui/core";
-import {Card} from "../Card/Card";
-import {LoadingDemos} from "../Demos/LoadingDemos";
-import {FlippingCard} from "../Demos/FlippingCard";
-import {cardsArray} from '../Demos/cardsArray'
+import {Card} from "../../Card/Card";
+import {LoadingDemos} from "./Demos/LoadingDemos";
+import {FlippingCard} from "./Demos/FlippingCard";
+import {cardsArray} from './Demos/cardsArray'
 
 const useStyles = makeStyles((theme) => ({
 

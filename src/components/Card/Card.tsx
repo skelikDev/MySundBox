@@ -6,7 +6,7 @@ import {Modal} from "./Modal";
 const useStyles = makeStyles((theme) => ({
     demoContainer: {
         minWidth:300,
-        background: "rgba(184,184,184,0.2)",
+        background: "rgba(184,184,184,0.1)",
         border: "1px solid rgba(184,184,184,0.5)",
         borderRadius: "10px",
     },
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "rgba(184,184,184,0.2)",
+        background: "rgba(184,184,184,0.1)",
         height: "400px",
         borderRadius: "5px",
     },

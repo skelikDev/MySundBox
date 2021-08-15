@@ -113,3 +113,24 @@ export const listForStudy = [
         isOpen: false
     },
 ]
+
+
+export const youtube = {
+    channels: [
+        {
+            name: 'Loftblog',
+            category: 'general',
+            favorite: false,
+            description: 'LoftBlog — это лучшее место для изучения it-технологий. Десятки практических уроков и курсов, где мы просто и весело будем учить вас только самому нужному и интересному, а именно, всему, что необходимо для создания горячего web-сервиса или сайта. Доступное высококачественное круглосуточное образование в любое удобное время и в любом удобном вам темпе — вот, что мы хотим дать всем тем, кто хочет достичь своей мечты и изменить мир. LoftBlog – это находка для человека изучающего технологии. Не забудьте подписаться и поделиться с друзьями!',
+            notes: 'dasdas',
+            link: 'https://www.youtube.com/user/loftblog/videos'
+        },
+    ],
+    video: [],
+    playlist: [{
+        name: 'BrainsCloud',
+        category: '',
+        description: '',
+        link: "https://www.youtube.com/c/BrainsCloud/playlists"
+    },],
+}

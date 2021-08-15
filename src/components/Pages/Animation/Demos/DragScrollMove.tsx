@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {useGesture} from "react-use-gesture";
 import {config} from "react-spring";
 import {useSpring, a} from "@react-spring/web";
-import witcher from '../../assets/DragScrollMove/witcher.png'
+import witcher from '../../../../assets/DragScrollMove/witcher.png'
 import useMeasure from "react-use-measure";
 
 let calc = (boxRef: React.MutableRefObject<HTMLDivElement>) => {

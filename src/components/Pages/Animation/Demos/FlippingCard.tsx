@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {makeStyles} from "@material-ui/core";
-import mgs from "../../assets/flippingCard/mgs.png"
-import deathStranding from "../../assets/flippingCard/deathStranding.png"
+import mgs from "../../../../assets/flippingCard/mgs.png"
+import deathStranding from "../../../../assets/flippingCard/deathStranding.png"
 import {useSpring, a} from "@react-spring/web";
 
 const useStyles = makeStyles((theme) => ({
